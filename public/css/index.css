@@ -1,0 +1,132 @@
+body{
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+#nav{
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background-color: rgb(230, 229, 229);
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+form{
+    width: 70%;
+}
+
+.block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px
+}
+
+#cityName{
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#city{
+    min-width: 250px;
+    height: 40px;
+}
+
+#country{
+    min-width: 250px;
+    height: 40px;
+}
+
+#map {
+    width: 80%;
+    height: 400px;
+}
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #b4baee;
+    --tertiary-color: #607eec;
+    --quaternary-color: #39beee;
+    --quinary-color: #b5a1f2;
+}
+
+.weather_card{
+    width: 50%;
+    border-radius: 15%;
+    animation: changeColor 20s infinite;
+}
+
+@keyframes changeColor {
+    0% { background-color: var(--primary-color); }
+    20% { background-color: var(--secondary-color); }
+    40% { background-color: var(--tertiary-color); }
+    60% { background-color: var(--quaternary-color); }
+    80% { background-color: var(--quinary-color); }
+    100% { background-color: var(--primary-color); }
+}
+
+.city_time{
+    text-align: center;
+}
+
+#tem_img{
+    display: flex;
+    justify-content: space-around;
+}
+
+#cardContainer{
+    width: 90%;
+    display: grid;
+    grid-template-areas:
+    "A A A A   A A B B   B B B B"
+    "C C C C   C C D D   D D D D"
+    "F F F F   F F F F   F F F F";
+    justify-items: center;
+    gap: 20px;
+}
+
+.card_wind,
+.card_volume,
+.card_humanity,
+.card_pressure,
+.card_countryCode {
+    min-height: 50px;
+    text-align: center;
+}
+
+.card_wind {
+    grid-area: A;
+}
+.card_volume {
+    grid-area: B;
+}
+.card_humanity {
+    grid-area: C;
+}
+.card_pressure {
+    grid-area: D;
+}
+.card_countryCode {
+    grid-area: F;
+}

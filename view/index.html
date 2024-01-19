@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iKt6Ua9l6U8B7ogSF3UbeLEDbQJCBmUtBJ3B5qE0R/4lJ5iSkkDg27kD" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div id="nav">
+            <h2>Wheather API Assignment</h2>
+        </div>
+    </header>
+    
+    <main>
+        <form action="/weather" method="post" id="weather">
+            <div class="block">
+                <div id="cityName">
+                    <label for="city"><h4>City</h4></label>
+                    <input type="text" name="city" id="city" placeholder="Enter your city">
+                    <label for="country"><h4>Country</h4></label>
+                    <input type="text" name="country" id="country" placeholder="Enter your country">
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+
+        <div class="weather_card color-1">
+            <div class="city_time">
+
+            </div>
+        
+            <div id="tem_img">
+                <div class="temperature">
+                </div>
+                <div id="imageContainer">
+                </div>
+            </div>
+            <div id="cardContainer">
+                <div class="card_wind">
+                </div>
+                <div class="card_volume">
+                </div>
+                <div class="card_humanity">
+                </div>
+                <div class="card_pressure">
+                </div>
+                <div class="card_countryCode">
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+    </main>
+
+    <footer class="bg-body-tertiary text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+          Gainatulin Dias
+          SE-2205
+        </div>
+    </footer>
+
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.7.6/awesomplete.min.js" integrity="sha512-s9uPw8M/b7IiK2Bva5Wz7IiAl/Lpi8CdvUNNN4w9p5Kl8LjsD1uLyzM3hsbQ23A5vfUd6rlCd6GJ0MeNykRTFw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgjwF1n8BnZqsamLj-fIpy0iZYxN0Hrrk"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/public/js/index.js"></script>
+</body>
+</html>
