@@ -1,1 +1,4 @@
 # Backend-Assignment2
+In order to start the server you need to: open a terminal -> enter “node app.js” -> open localhost in the browser on port 3000. I connected 3 APIs to this server. These are Open Weather API, News API and Google Maps API. Open Weather API displays the longitude and width of a city, and also finds all the necessary information on the weather in a given city. The Google Maps API displays a Google map centered on a point based on the provided longitude and width. News API provides the latest news for a given city.
+
+The main logic of the site is written in the file "app.js" (Connecting to the API, receiving information from the API). There is also a file “index.js”, where the information that I sent from “app.js” is output using res.json({weatherData, newsData});. Also in "index.js" the map is imported at the given coordinates.

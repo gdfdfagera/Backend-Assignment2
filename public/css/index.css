@@ -49,12 +49,12 @@ form{
 }
 
 #city{
-    min-width: 250px;
+    width: 100%;
     height: 40px;
 }
 
 #country{
-    min-width: 250px;
+    width: 100%;
     height: 40px;
 }
 
@@ -75,6 +75,7 @@ form{
     width: 50%;
     border-radius: 15%;
     animation: changeColor 20s infinite;
+    display: none;
 }
 
 @keyframes changeColor {
@@ -93,18 +94,28 @@ form{
 #tem_img{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #cardContainer{
     width: 90%;
-    display: grid;
-    grid-template-areas:
-    "A A A A   A A B B   B B B B"
-    "C C C C   C C D D   D D D D"
-    "F F F F   F F F F   F F F F";
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
+
+#first{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#second{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 
 .card_wind,
 .card_volume,
@@ -115,18 +126,21 @@ form{
     text-align: center;
 }
 
-.card_wind {
-    grid-area: A;
+/* #news{
+    background-color: rgb(236, 232, 232);
+} */
+
+.newsList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
 }
-.card_volume {
-    grid-area: B;
-}
-.card_humanity {
-    grid-area: C;
-}
-.card_pressure {
-    grid-area: D;
-}
-.card_countryCode {
-    grid-area: F;
+
+.newsItem{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
 }

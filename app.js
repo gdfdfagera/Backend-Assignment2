@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const countries = require("i18n-iso-countries");
+const newsLanguage = 'en';
 const PORT = 3000;
 
 const app = express();
 
 const OPEN_WEATHER_API_KEY = '65c9fec7eae7d186800771c006793ad0';
+const newsApiKey = 'a09568439b1a4e32b631c1833f24720e';
 
 app.use('/public', express.static('public'));
 app.use(bodyParser.json());
@@ -23,6 +25,8 @@ app.post('/weather', async (req, res) => {
       let weatherResponse = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${OPEN_WEATHER_API_KEY}`
       );
+      const newsResponse = await axios.get(`https://newsapi.org/v2/everything?q=${city}&apiKey=${newsApiKey}&language=${newsLanguage}`);
+      const newsData = newsResponse.data;
 
       let weatherData = {
           temperature: kelvinToCelsius(weatherResponse.data.main.temp),
@@ -41,8 +45,9 @@ app.post('/weather', async (req, res) => {
       };
 
       console.log(weatherData);
+      console.log(newsData);
 
-      res.json(weatherData);
+      res.json({weatherData, newsData});
   } catch (error) {
       console.error('Error fetching weather data:', error.message);
       res.status(500).json({ error: 'Internal Server Error' });
